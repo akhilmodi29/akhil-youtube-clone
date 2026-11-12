@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# 🎬 Akhil YouTube Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully functional YouTube clone built with **React**, **Redux Toolkit**, **Tailwind CSS**, and **React Router DOM**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🏠 **Home Page** — Fetches and displays trending videos from YouTube API
+- 🔍 **Search Suggestions** — Live search with debouncing (200ms)
+- 📺 **Watch Page** — Embeds YouTube video player
+- 💬 **Live Chat** — Simulated real-time chat with auto-generated messages
+- 🗂️ **Sidebar** — Toggle-able sidebar with navigation links
+- 🔘 **Category Buttons** — Filter videos by category
+- 🗃️ **Redux State Management** — Global state for sidebar toggle and live chat
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+| Technology | Purpose |
+|---|---|
+| React 19 | UI Library |
+| Redux Toolkit | State Management |
+| React Router DOM | Client-side Routing |
+| Tailwind CSS | Styling |
+| YouTube Data API v3 | Fetch Videos |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📦 Installation & Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/akhilmodi29/akhil-youtube-clone.git
+   cd akhil-youtube-clone
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Set up environment variables**
 
-### `npm run eject`
+   Create a `.env` file in the root directory:
+   ```
+   REACT_APP_GOOGLE_API_KEY=your_youtube_api_key_here
+   ```
+   Get your API key from [Google Cloud Console](https://console.cloud.google.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📁 Project Structure
 
-## Learn More
+```
+src/
+├── components/
+│   ├── Head.js              # Header with search bar
+│   ├── Body.js              # Layout with sidebar + outlet
+│   ├── Sidebar.js           # Navigation sidebar
+│   ├── MainContainer.js     # Buttons + video grid
+│   ├── ButtonList.js        # Category filter buttons
+│   ├── VideoContainer.js    # Fetches & displays videos
+│   ├── VideoCard.js         # Individual video card
+│   ├── WatchPage.js         # Video player page
+│   ├── LiveChat.js          # Live chat simulation
+│   ├── ChatMessage.js       # Single chat message
+│   └── CommentsContainer.js # Comments section
+├── utils/
+│   ├── store.js             # Redux store
+│   ├── appSlice.js          # Sidebar state slice
+│   ├── chatSlice.js         # Live chat state slice
+│   ├── constants.js         # API URLs
+│   └── helper.js            # Utility functions
+└── App.js                   # Root component with routing
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔧 Available Scripts
 
-### Code Splitting
+```bash
+npm start        # Run development server
+npm run build    # Build for production
+npm test         # Run tests
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🌐 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+When deploying to **Vercel** or **Netlify**, add the environment variable in your platform's dashboard:
 
-### Making a Progressive Web App
+```
+REACT_APP_GOOGLE_API_KEY = your_api_key_here
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 👨‍💻 Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Akhil Modi**
+- GitHub: [@akhilmodi29](https://github.com/akhilmodi29)
