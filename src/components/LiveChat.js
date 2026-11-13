@@ -23,11 +23,12 @@ const LiveChat = () => {
     }, 2000);
 
     return () => clearInterval(i);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <>
-        <div className='w-full h-[600px] m-2 p-2 border rounded-lg border-black bg-slate-100 overflow-y-scroll flex flex-col-reverse'>
+    <div className="w-full">
+        <div className='w-full h-[450px] p-2 border rounded-t-xl border-[#303030] bg-[#181818] overflow-y-scroll flex flex-col-reverse'>
             <div>
             {
                 chatMessages.map((c,i) => (
@@ -37,9 +38,10 @@ const LiveChat = () => {
             </div>
         </div>
         <form 
-            className='w-full p-2 ml-2 border border-black' 
+            className='w-full p-2 border border-t-0 border-[#303030] rounded-b-xl flex gap-2 bg-[#1f1f1f]' 
             onSubmit={(e) => {
                 e.preventDefault();
+                if (!liveMessage.trim()) return;
 
                 dispatch(
                     addMessage({
@@ -52,13 +54,14 @@ const LiveChat = () => {
             <input 
                 type = "text" 
                 value={liveMessage}
-                className='w-96 px-2 border border-black' 
+                placeholder="Chat..."
+                className='flex-1 px-3 py-1 bg-[#121212] border border-[#383838] text-white text-sm rounded-full outline-none focus:border-blue-500 placeholder-gray-500' 
                 onChange={(e) => {
                     setLiveMessage(e.target.value);
                 }} /> 
-            <button className='px-2 mx-2 bg-green-100'>Send</button>
+            <button className='px-4 py-1 bg-green-600 text-white text-sm font-medium rounded-full hover:bg-green-700'>Send</button>
         </form>
-    </>
+    </div>
   );
 };
 

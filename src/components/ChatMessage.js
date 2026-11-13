@@ -2,14 +2,14 @@ import React from 'react'
 
 const ChatMessage = ({name, message}) => {
   return (
-    <div className='flex items-center shadow-sm p-2'>
+    <div className='flex items-center py-1.5 px-2 hover:bg-[#2e2e2e] rounded-lg text-white'>
         <img
-          className="h-8"
+          className="h-6 w-6 invert opacity-80 flex-shrink-0"
           alt="user"
           src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
         />
-        <span className='font-bold px-2'>{name}</span>
-        <span>{message}</span>
+        <span className='font-semibold text-xs text-gray-400 px-2 flex-shrink-0'>{name}</span>
+        <span className='text-xs text-gray-200'>{message}</span>
     </div>
   )
 }
